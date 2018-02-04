@@ -9,7 +9,7 @@ public class SquareArray {
 	// centrale locatie size
 	private int size = 5;
 	public int[][] array2d = new int[size][size];
-	private List<Integer> solutions = new ArrayList<>();
+	private List<Integer> solutions = new ArrayList<>(1_000_000_000);
 	private int numberOfSolutions;
 
 	// methode uit StackOverflow
@@ -36,14 +36,30 @@ public class SquareArray {
 		}
 
 		solutions.add(solution);
-		numberOfSolutions++;
+		manageNumberOfSolutions();
 	}
-	
+
 	public int findLargestSolution() {
 		return Collections.max(solutions);
 	}
 
+	// als list > 1 miljard: bereken grootste, lijst leegmaken, grootste in
+	// lijst plaatsen en verder rekenen
+	public void manageNumberOfSolutions() {
+		if (numberOfSolutions >= 1_000_000_000) {
+
+			numberOfSolutions = 0;
+			int maxValue = findLargestSolution();
+			solutions.clear();
+			solutions.add(maxValue);
+
+		} else {
+			numberOfSolutions++;
+		}
+	}
+
 	// voorbeeldoplossing met array size = 5
+	// onderaan geplaatst want onbelangrijk in programma zelf
 	{
 		array2d[0][0] = 7;
 		array2d[0][1] = 53;
