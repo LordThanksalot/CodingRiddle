@@ -1,5 +1,6 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,8 +9,7 @@ public class SquareArray {
 	// centrale locatie size
 	private int size = 5;
 	private int[][] array2d = new int[size][size];
-	private int solutionSize = findNumberOfSolutions();
-	private int[] solutions = new int[solutionSize];
+	private List<Integer> solutions = new ArrayList<>();
 	private int numberOfSolutions;
 
 	// methode uit StackOverflow
@@ -20,23 +20,22 @@ public class SquareArray {
 			java.util.Collections.swap(arrayList, element, i);
 		}
 		if (element == arrayList.size() - 1) {
-			System.out.println(Arrays.toString(arrayList.toArray()));
+			addSolution(arrayList);
+			System.out.println(numberOfSolutions);
 		}
 	}
 
-	// 2 methodes verkregen uit StackOverflow en aangepast
-	private int findNumberOfSolutions() {
-		return getFact(size) / (getFact(0));
-	}
+	// voegt som toe aan solution list
+	public void addSolution(List<Integer> list) {
+		int solution = 0;
 
-	private int getFact(int n) {
-		int f = 1;
-
-		for (int i = n; i >= 1; i--) {
-			f *= i;
+		for (int i = 0; i < list.size(); i++) {
+			int j = list.get(i);
+			int value = array2d[i][j];
+			solution += value;
 		}
 
-		return f;
+		solutions.add(solution);
 	}
 
 	// voorbeeldoplossing met array size = 5
