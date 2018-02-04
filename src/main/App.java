@@ -1,5 +1,7 @@
 package main;
 
+import java.util.List;
+
 public class App {
 
 	// optie: locaties at random kiezen, daar de som van nemen en zo totdat at
@@ -22,7 +24,8 @@ public class App {
 
 	public static void main(String[] args) {
 		SquareArray sa = new SquareArray();
-		sa.permutingArray(java.util.Arrays.asList(0, 1, 2, 3, 4), 0);
-		System.out.println(sa.findLargestSolution());
+		List<Integer> list = sa.getFilledList();
+		sa.permutingArray(list, 0);
+		System.out.println("The largest sum in the array is: " + sa.findLargestSolution());
 	}
 }

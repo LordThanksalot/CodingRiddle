@@ -21,7 +21,7 @@ public class SquareArray {
 		}
 		if (element == arrayList.size() - 1) {
 			addSolution(arrayList);
-			System.out.println(numberOfSolutions);
+			System.out.println("Number of Solutions: " + numberOfSolutions);
 		}
 	}
 
@@ -56,6 +56,17 @@ public class SquareArray {
 		} else {
 			numberOfSolutions++;
 		}
+	}
+
+	// geeft lijst terug waar waarden gelijk zijn aan hun index
+	public List<Integer> getFilledList() {
+		List<Integer> list = new ArrayList<>();
+
+		for (int i = 0; i < size; i++) {
+			list.add(i);
+		}
+
+		return list;
 	}
 
 	// voorbeeldoplossing met array size = 5
