@@ -21,6 +21,12 @@ public class App {
 	// zijn geheugen, maakt die de solutions leeg en plaatst hem daar dan terug
 	// in
 	// om dan gewoon verder te rekenen
+	//
+	// FINAL: constructorparameter 5 geeft het voorbeeld, elke andere waarde
+	// geeft lege array
+	// na het berekenen van de oplossingen geeft ie uiteindelijk de grootst
+	// mogelijke som.
+	// voor een array van 15x15 is hij echter tot 2 maanden bezig met rekenen.
 
 	public static void main(String[] args) {
 		SquareArray sa = new SquareArray(15);

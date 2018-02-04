@@ -11,8 +11,8 @@ public class SquareArray {
 	public int[][] array2d;
 	private List<Integer> solutions = new ArrayList<>(1_000_000_000);
 	private int numberOfSolutions;
-	
-	public SquareArray(int size){
+
+	public SquareArray(int size) {
 		this.size = size;
 		array2d = new int[size][size];
 		initializeArray2d();
@@ -78,7 +78,7 @@ public class SquareArray {
 	// voorbeeldoplossing met array size = 5
 	// onderaan geplaatst want onbelangrijk in programma zelf
 	private void initializeArray2d() {
-		if(size == 5){
+		if (size == 5) {
 			array2d[0][0] = 7;
 			array2d[0][1] = 53;
 			array2d[0][2] = 183;
@@ -103,7 +103,7 @@ public class SquareArray {
 			array2d[4][1] = 473;
 			array2d[4][2] = 103;
 			array2d[4][3] = 699;
-			array2d[4][4] = 303;	
+			array2d[4][4] = 303;
 		}
 	}
 }
