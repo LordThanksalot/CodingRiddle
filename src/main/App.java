@@ -23,7 +23,7 @@ public class App {
 	// om dan gewoon verder te rekenen
 
 	public static void main(String[] args) {
-		SquareArray sa = new SquareArray();
+		SquareArray sa = new SquareArray(15);
 		List<Integer> list = sa.getFilledList();
 		sa.permutingArray(list, 0);
 		System.out.println("The largest sum in the array is: " + sa.findLargestSolution());

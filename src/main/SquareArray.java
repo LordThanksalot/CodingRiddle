@@ -7,10 +7,16 @@ import java.util.List;
 public class SquareArray {
 
 	// centrale locatie size
-	private int size = 5;
-	public int[][] array2d = new int[size][size];
+	private int size;
+	public int[][] array2d;
 	private List<Integer> solutions = new ArrayList<>(1_000_000_000);
 	private int numberOfSolutions;
+	
+	public SquareArray(int size){
+		this.size = size;
+		array2d = new int[size][size];
+		initializeArray2d();
+	}
 
 	// methode uit StackOverflow
 	public void permutingArray(List<Integer> arrayList, int element) {
@@ -21,7 +27,7 @@ public class SquareArray {
 		}
 		if (element == arrayList.size() - 1) {
 			addSolution(arrayList);
-			System.out.println("Number of Solutions: " + numberOfSolutions);
+			System.out.println("Solution List Size: " + numberOfSolutions);
 		}
 	}
 
@@ -71,31 +77,33 @@ public class SquareArray {
 
 	// voorbeeldoplossing met array size = 5
 	// onderaan geplaatst want onbelangrijk in programma zelf
-	{
-		array2d[0][0] = 7;
-		array2d[0][1] = 53;
-		array2d[0][2] = 183;
-		array2d[0][3] = 439;
-		array2d[0][4] = 863;
-		array2d[1][0] = 497;
-		array2d[1][1] = 383;
-		array2d[1][2] = 563;
-		array2d[1][3] = 79;
-		array2d[1][4] = 973;
-		array2d[2][0] = 287;
-		array2d[2][1] = 63;
-		array2d[2][2] = 343;
-		array2d[2][3] = 169;
-		array2d[2][4] = 583;
-		array2d[3][0] = 627;
-		array2d[3][1] = 343;
-		array2d[3][2] = 773;
-		array2d[3][3] = 959;
-		array2d[3][4] = 943;
-		array2d[4][0] = 767;
-		array2d[4][1] = 473;
-		array2d[4][2] = 103;
-		array2d[4][3] = 699;
-		array2d[4][4] = 303;
+	private void initializeArray2d() {
+		if(size == 5){
+			array2d[0][0] = 7;
+			array2d[0][1] = 53;
+			array2d[0][2] = 183;
+			array2d[0][3] = 439;
+			array2d[0][4] = 863;
+			array2d[1][0] = 497;
+			array2d[1][1] = 383;
+			array2d[1][2] = 563;
+			array2d[1][3] = 79;
+			array2d[1][4] = 973;
+			array2d[2][0] = 287;
+			array2d[2][1] = 63;
+			array2d[2][2] = 343;
+			array2d[2][3] = 169;
+			array2d[2][4] = 583;
+			array2d[3][0] = 627;
+			array2d[3][1] = 343;
+			array2d[3][2] = 773;
+			array2d[3][3] = 959;
+			array2d[3][4] = 943;
+			array2d[4][0] = 767;
+			array2d[4][1] = 473;
+			array2d[4][2] = 103;
+			array2d[4][3] = 699;
+			array2d[4][4] = 303;	
+		}
 	}
 }
