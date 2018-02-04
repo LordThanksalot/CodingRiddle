@@ -8,7 +8,7 @@ public class SquareArray {
 
 	// centrale locatie size
 	private int size;
-	public int[][] array2d;
+	private int[][] array2d;
 	private List<Integer> solutions = new ArrayList<>(1_000_000_000);
 	private int numberOfSolutions;
 
