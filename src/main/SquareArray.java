@@ -51,7 +51,7 @@ public class SquareArray {
 
 	// als list > 1 miljard: bereken grootste, lijst leegmaken, grootste in
 	// lijst plaatsen en verder rekenen
-	public void manageNumberOfSolutions() {
+	private void manageNumberOfSolutions() {
 		if (numberOfSolutions >= 1_000_000_000) {
 
 			numberOfSolutions = 0;
