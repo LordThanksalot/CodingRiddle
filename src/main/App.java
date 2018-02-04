@@ -11,6 +11,7 @@ public class App {
 	//het bereiken van de array2d size toegevoegd wordt aan een array van solutions
 	
 	public static void main(String[] args) {
-
+		SquareArray sa = new SquareArray();
+		sa.permutingArray(java.util.Arrays.asList(0, 1, 2, 3, 4), 0);
 	}
 }
