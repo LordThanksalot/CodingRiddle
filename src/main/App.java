@@ -23,5 +23,6 @@ public class App {
 	public static void main(String[] args) {
 		SquareArray sa = new SquareArray();
 		sa.permutingArray(java.util.Arrays.asList(0, 1, 2, 3, 4), 0);
+		System.out.println(sa.findLargestSolution());
 	}
 }

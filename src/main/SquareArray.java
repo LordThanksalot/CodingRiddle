@@ -1,14 +1,14 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class SquareArray {
 
 	// centrale locatie size
 	private int size = 5;
-	private int[][] array2d = new int[size][size];
+	public int[][] array2d = new int[size][size];
 	private List<Integer> solutions = new ArrayList<>();
 	private int numberOfSolutions;
 
@@ -26,7 +26,7 @@ public class SquareArray {
 	}
 
 	// voegt som toe aan solution list
-	public void addSolution(List<Integer> list) {
+	private void addSolution(List<Integer> list) {
 		int solution = 0;
 
 		for (int i = 0; i < list.size(); i++) {
@@ -36,6 +36,11 @@ public class SquareArray {
 		}
 
 		solutions.add(solution);
+		numberOfSolutions++;
+	}
+	
+	public int findLargestSolution() {
+		return Collections.max(solutions);
 	}
 
 	// voorbeeldoplossing met array size = 5
